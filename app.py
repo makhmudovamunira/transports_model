@@ -1,8 +1,10 @@
 import streamlit as st
 from fastai.vision.all import *
 import pathlib
+import plotly.express as px
 temp=pathlib.PosixPath
 pathlib.PosixPath=pathlib.WindowsPath
+
 
 
 #title
@@ -21,3 +23,6 @@ if file:
   pred, pred_id, probs=model.predict(img)
   st.success(f"bashorat {pred}")
   st.info(f"Ehtimollik {probs[pred_id]*100:.2f}%")                   
+
+px.bar(x=probs*100, y=model.dls.vocab)
+st.plotly_chart(fig)
