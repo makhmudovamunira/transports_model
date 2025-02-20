@@ -1,5 +1,9 @@
 import streamlit as st
 from fastai.vision.all import *
+import pathlib
+temp=pathlib.PosixPath
+pathlib.PosixPath=pathlib.WindowsPath
+
 
 #title
 st.title('Transportlarni klassifikatsiya qiluvchi model')
