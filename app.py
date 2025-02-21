@@ -2,6 +2,7 @@ import streamlit as st
 from fastai.vision.all import *
 import pathlib
 import plotly.express as px
+from io import BytesIO
 temp=pathlib.PosixPath
 pathlib.PosixPath=pathlib.WindowsPath
 
@@ -16,7 +17,7 @@ if file:
   st.title('Transportlarni klassifikatsiya qiluvchi model11')
   st.image(file)
   #PIL convert
-  img=PILImage.create(file)
+  img=PILImage.create(BytesIO(file.getvalue()))
   #model
   model=load_learner('transport_model.pkl')
 
