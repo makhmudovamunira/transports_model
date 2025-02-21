@@ -13,6 +13,7 @@ st.title('Transportlarni klassifikatsiya qiluvchi model')
 file=st.file_uploader('rasm yuklash', type=['png', 'jpeg', 'gif', 'svg'])
 
 if file:
+  st.title('Transportlarni klassifikatsiya qiluvchi model11')
   st.image(file)
   #PIL convert
   img=PILImage.create(file)
